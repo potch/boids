@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+canvas {
+  display: block;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  pointer-events: none;
+}
+.modal .menu {
+  padding: 16px;
+  background: rgba(255,255,255,.9);
+  width: 320px;
+  height: 100%;
+  box-shadow: 0 0 64px rgba(0, 0, 0, .5);
+  overflow: auto;
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: 100ms, 100ms;
+  transition-timing-function: ease-out;
+  transform: translate(-100%, 0);
+}
+.modal.show .menu {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.modal.show {
+  pointer-events: auto;
+}
+
+.settings input[type="range"] {
+  display: block;
+  width: 100%;
+  margin: 8px auto 0;
+}
+.settings label {
+  display: block;
+  margin-bottom: 1em;
+}
+settings input {
+  margin: 16px;
+}
+
+h1, h2, h3 {
+  margin: 1rem 0;
+}
