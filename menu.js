@@ -66,7 +66,7 @@ const menu = (function () {
             'data-bound': 'friction'
           })
         ),
-        d('h2', 'Gravity'),
+        d('h2', 'Gravity (g)'),
         d('label', 'Active',
           d('input', {
             type: 'checkbox',
@@ -82,7 +82,7 @@ const menu = (function () {
             'data-bound': 'gravity.threshold'
           })
         ),
-        d('h2', 'Flocking'),
+        d('h2', 'Flocking (f)'),
         d('label', 'Active',
           d('input', {
             type: 'checkbox',
@@ -107,7 +107,7 @@ const menu = (function () {
             'data-bound': 'flock.threshold'
           })
         ),
-        d('h2', 'Repulsion'),
+        d('h2', 'Repulsion (r)'),
         d('label', 'Active',
           d('input', {
             type: 'checkbox',
@@ -132,7 +132,7 @@ const menu = (function () {
             'data-bound': 'repulse.threshold'
           })
         ),
-        d('h2', 'Rubberband'),
+        d('h2', 'Rubberband (b)'),
         d('label', 'Active',
           d('input', {
             type: 'checkbox',

@@ -5,6 +5,7 @@ body {
   margin: 0;
   font-size: 15px;
   font-family: sans-serif;
+  line-height: 1.2;
 }
 canvas {
   display: block;
@@ -43,12 +44,55 @@ canvas {
   width: 100%;
   margin: 8px auto 0;
 }
+.settings input[type="checkbox"] {
+  display: inline-block;
+  margin-left: 1em;
+}
 .settings label {
   display: block;
   margin-bottom: 1em;
 }
-settings input {
-  margin: 16px;
+
+.toast {
+  position: absolute;
+  font-size: 2em;
+  color: rgba(0, 0, 0, .9);
+  bottom: 1em;
+  left: 1em;
+  right: 1em;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 100ms;
+  transition-timing-function: ease-out;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+.slides {
+  position: absolute;
+  font-size: 4em;
+  top: 1em;
+  left: 1em;
+  right: 1em;
+  color: rgba(0, 0, 0, .9);
+  opacity: 0;
+  pointer-events: none;
+  transition-property: opacity;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+  text-align: center;
+}
+
+.slides.show {
+  opacity: 1;
+}
+
+sub, sup {
+  font-size: .6em;
 }
 
 h1, h2, h3 {
