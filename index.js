@@ -4,7 +4,7 @@ canvas.height = window.innerHeight;
 let ctx = canvas.getContext('2d');
 
 let config = {
-  count: 0,
+  count: 20,
   friction: 70,
   gravity: {
     active: false,

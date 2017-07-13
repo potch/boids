@@ -1,18 +1,22 @@
 (function () {
 
   let currentSlide = 0;
+  let slidesOn = false;
 
   window.addEventListener('keypress', function (e) {
-    if (e.key === 'ArrowRight') {
-      currentSlide++;
-      loadSlide();
-    }
-    if (e.key === 'ArrowLeft') {
-      currentSlide--;
-      loadSlide();
+    if (slidesOn) {
+      if (e.key === 'ArrowRight') {
+        currentSlide++;
+        loadSlide();
+      }
+      if (e.key === 'ArrowLeft') {
+        currentSlide--;
+        loadSlide();
+      }
     }
     if (e.key === 't') {
       currentSlide = 0;
+      slidesOn = true;
       loadSlide();
     }
   });
@@ -22,6 +26,7 @@
     let slide = slides[currentSlide];
     if (!slide) {
       slideEl.classList.remove('show');
+      slidesOn = false;
       return;
     }
     if (slide.callback) {
@@ -110,8 +115,33 @@
       content: 'Both!'
     },
     {
+      content: 'Friction',
+      callback: function () {
+        config.gravity.threshold = 100;
+        config.repulse.strength = 90;
+      }
+    },
+    {
+      content: `<code>v<sub>f</sub>=v&times;C<sub>f</sub></code>`
+    },
+    {
+      content: 'Friction (low)',
+      callback: function () {
+        config.friction = 5;
+      }
+    },
+    {
+      content: 'Friction (high)',
+      callback: function () {
+        config.friction = 90;
+      }
+    },
+    {
       callback: function () {
         config.flock.active = true;
+        config.gravity.threshold = 200;
+        config.repulse.strength = 80;
+        config.friction = 70;
       },
       content: 'Flocking'
     },
