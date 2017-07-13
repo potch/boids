@@ -5,7 +5,6 @@ class Boid {
     this.y = y;
     this.s = s || 1;
     this.m = m || 1;
-    this.face = 0;
     this.vx = 0;
     this.vy = 0;
     this.fx = 0;
@@ -26,7 +25,6 @@ class Boid {
     this.vy += this.fy / this.m;
     this.fx = 0;
     this.fy = 0;
-    this.face = this.face * .9 + this.a * .1;
   }
 
   range (b) {
@@ -50,7 +48,7 @@ class Boid {
     let s = this.s;
     ctx.save();
     ctx.translate(this.x, this.y);
-    ctx.rotate(this.face);
+    ctx.rotate(this.a);
     ctx.strokeStyle = '#000';
     ctx.beginPath();
     ctx.moveTo(2 * s, 0);

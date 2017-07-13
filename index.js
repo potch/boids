@@ -4,14 +4,14 @@ canvas.height = window.innerHeight;
 let ctx = canvas.getContext('2d');
 
 let config = {
-  count: 20,
+  count: 40,
   friction: 70,
   gravity: {
-    active: false,
+    active: true,
     threshold: 200
   },
   repulse: {
-    active: false,
+    active: true,
     threshold: 100,
     strength: 80
   },
@@ -165,14 +165,16 @@ window.addEventListener('keypress', function (e) {
 
 let toastTimeout;
 let toastEl = document.querySelector('.toast');
-function toast(text) {
+function toast(text, ms) {
   clearTimeout(toastTimeout);
   toastEl.innerHTML = text;
   toastEl.classList.add('show');
   toastTimeout = setTimeout(function () {
     toastEl.classList.remove('show');
-  }, 1000);
+  }, ms || 1000);
 }
+
+toast('press m for menu', 2000);
 
 canvas.addEventListener('click', function (e) {
   menu.hide();
